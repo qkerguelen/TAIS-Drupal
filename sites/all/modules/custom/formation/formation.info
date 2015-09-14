@@ -1,0 +1,5 @@
+name = Formation
+description = Best module ever!
+core = 7.x
+files[] = formation.module
+package = D-WEB<3

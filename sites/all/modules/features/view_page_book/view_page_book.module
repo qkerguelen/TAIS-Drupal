@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Vue page Livre feature.
+ */
+
+include_once 'view_page_book.features.inc';

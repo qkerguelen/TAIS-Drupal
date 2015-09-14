@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Type de contenu Livre feature.
+ */
+
+include_once 'ct_book.features.inc';

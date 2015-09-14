@@ -1,0 +1,40 @@
+<?php
+
+	function formation_help($path, $arg) {
+		switch ($path) {
+			case 'admin/help#formation':
+				return '<p>' . t('This is the formation module help <a href="http://lmgtfy.com/?q=formation">More</a>') . '</p>';
+		}
+	}
+
+	function formation_permission() {
+		$permissions = array(
+		    'access all' => array(
+		      'title' => t('Access all'),
+		      'description' => t('Control everything!'),
+		    ),
+		  );
+
+		return $permissions;
+	}
+
+	function formation_user_login(&$edit, $account) {
+  		drupal_set_message(t("Welcome")." ".$account->name,"success");
+	}
+
+	function formation_menu(){
+		$items['formation'] = array(
+			'title' => 'Formation',
+			'page callback' => 'formation_ma_page',
+			'access callback' => TRUE,
+		);
+		return $items;
+	}
+
+	function formation_ma_page(){
+		global $user;
+		if(isset($user->name)) $textPerso = t("Votre nom d'utilisateur est").' '.$user->name;
+		else $textPerso = t("Vous n'êtes pas connecté");
+		return '<p>'.t('Vous êtes sur la page').' '.drupal_get_title().'. '.$textPerso.'</p>';
+	}
+?>
